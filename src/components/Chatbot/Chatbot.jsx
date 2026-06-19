@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './Chatbot.css';
 // Import file dữ liệu (bạn có thể gửi cái này lên backend sau)
-import thuTucData from '../../Datanew/thutuc_binhtan.json';
+
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
