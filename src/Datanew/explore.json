@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Siêu Thị AEON MALL Bình Tân",
+    "category": "sieu-thi",
+    "excerpt": "AEON MALL Bình Tân là trung tâm mua sắm và vui chơi giải trí nổi tiếng bậc nhất Bình Tân với hàng trăm gian hàng đa dạng về món ăn, thức uống và những nơi giải trí nổi bật như: Rạp chiếu phim, khu trò chơi,..",
+    "image": "/images/aeon-binhtan.jpg",
+    "address": "ĐC: Đường số 17A, Bình Trị Đông B, Bình Tân, TP HCM ",
+    "tags": ["Siêu Thị"]
+  },
+  {
+    "id": 2,
+    "title": "Chùa Huệ Nghiêm",
+    "category": "van-hoa",
+    "excerpt": "Nhắc đến địa điểm tham quan văn hóa tâm linh nhất định phải ghé thăm tại Bình Tân thì chắc chắn không thể bỏ lỡ chùa Huệ Nghiêm - ngôi chùa được mệnh danh là chốn “bồng lai tiên cảnh” giữa lòng đô thị. Với không gian vô cùng yên bình, khuôn viên rộng thoáng, nhiều cây xanh sẽ mang đến cho bạn sự thanh thản và lắng đọng tâm hồn khi ghé nơi đây.",
+    "image": "/images/chua-tu-hanh.jpg",
+    "address": "ĐC: KP2 Đỗ Năng Tế, An Lạc A, Bình Tân, TP HCM ",
+    "tags": ["Văn hóa"]
+  },
+  {
+    "id": 3,
+    "title": "King Koi Coffee",
+    "category": "am-thuc",
+    "excerpt": "Một trong những địa điểm vui chơi và thư giãn sở hữu không gian vô cùng đẹp mắt với các hồ cá koi sinh động, thiết kế độc đáo cùng nhiều loại nước uống sáng tạo và ngon miệng mà bạn không nên bỏ lỡ chính là King Koi Coffee.",
+    "image": "/images/king-koi.jpg",
+    "address": "ĐC: 118 đường số 7, Bình Trị Đông B, Bình Tân, TP HCM ",
+    "tags": ["Ẩm thực"]
+  }
+  
+]

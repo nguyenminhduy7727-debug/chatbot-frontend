@@ -1,0 +1,18 @@
+[
+  {
+    "id": "khai_sinh",
+    "ten_thu_tuc": "Đăng ký khai sinh",
+    "ho_so_gom": ["Giấy chứng sinh (bản chính)", "CMND/CCCD của cha mẹ", "Giấy chứng nhận kết hôn (nếu có)"],
+    "le_phi": "Miễn phí",
+    "thoi_gian_giai_quyet": "1 ngày làm việc",
+    "noi_nop": "Bộ phận Một cửa - UBND phường Bình Tân"
+  },
+  {
+    "id": "ket_hon",
+    "ten_thu_tuc": "Đăng ký kết hôn",
+    "ho_so_gom": ["Tờ khai đăng ký kết hôn", "Giấy xác nhận tình trạng hôn nhân", "CCCD của hai bên"],
+    "le_phi": "Miễn phí nếu đăng ký tại phường cư trú",
+    "thoi_gian_giai_quyet": "Giải quyết ngay trong ngày nếu đủ hồ sơ",
+    "noi_nop": "Bộ phận Một cửa - UBND phường Bình Tân"
+  }
+]
