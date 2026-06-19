@@ -17,25 +17,27 @@ const Chatbot = () => {
     if (!input.trim()) return;
 
     const userText = input;
-    // Cập nhật tin nhắn user lên UI ngay lập tức
     setMessages((prev) => [...prev, { sender: 'user', text: userText }]);
     setInput('');
 
+    // 1. BẬT TRẠNG THÁI ĐANG LOAD LÊN (Hiển thị 3 dấu chấm)
+    setIsLoading(true);
+
     try {
-      // Gọi lên Backend (đang chạy ở port 5000)
-      const response = await fetch('https://chatbot-backend-bice.vercel.app/api/chat', {
+      const response = await fetch('https://chatbot-backend-xxx.vercel.app/api/chat', { // Giữ nguyên link của bạn nha
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userMessage: userText })
       });
-      
-      const data = await response.json();
 
-      // Thêm câu trả lời của Gemini vào UI
+      const data = await response.json();
       setMessages((prev) => [...prev, { sender: 'bot', text: data.reply }]);
-      
+
     } catch (error) {
       setMessages((prev) => [...prev, { sender: 'bot', text: "Lỗi kết nối đến máy chủ." }]);
+    } finally {
+      // 2. TẮT TRẠNG THÁI LOAD ĐI (Dù gọi API thành công hay lỗi cũng phải tắt)
+      setIsLoading(false);
     }
   };
 
@@ -50,18 +52,20 @@ const Chatbot = () => {
           </div>
           
             <div className="chat-body">
-            {messages.map((msg, index) => (
-              <div key={index} className={`message ${msg.sender}`}>
-                {/* Nếu là bot thì dùng ReactMarkdown để dịch chữ in đậm/xuống dòng */}
-                {msg.sender === 'bot' ? (
-                  <ReactMarkdown>{msg.text}</ReactMarkdown>
-                ) : (
-                  /* Nếu là người dùng thì in chữ bình thường */
-                  msg.text
-                )}
-              </div>
-            ))}
-          </div>
+          {messages.map((msg, index) => (
+             // ... Code hiện tại hiển thị tin nhắn của bạn ...
+             <div key={index} className={`message ${msg.sender}`}>{msg.text}</div>
+          ))}
+
+          {/* CHÈN THÊM ĐOẠN NÀY VÀO DƯỚI VÒNG LẶP TIN NHẮN */}
+          {isLoading && (
+            <div className="message bot loading-indicator">
+              <span className="dot"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+          )}
+        </div>
           <div className="chat-footer">
             <input 
               type="text" 

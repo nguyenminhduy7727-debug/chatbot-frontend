@@ -123,7 +123,7 @@ export default function Header() {
 
                   <div className="leading-tight min-w-0">
                     <h1 className="text-sm lg:text-[15px] font-black uppercase tracking-wide text-white truncate">
-                      Đoàn TNCS Hồ Chí Minh
+                      Trung tâm Cung ứng Dịch vụ công Bình Tân
                     </h1>
                     <p className="text-xs text-white/80 truncate">
                       Phường Bình Tân, Thành phố Hồ Chí Minh
