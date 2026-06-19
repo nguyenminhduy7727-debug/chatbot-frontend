@@ -10,7 +10,7 @@ const Chatbot = () => {
     { sender: 'bot', text: 'Xin chào! Tôi là Trợ lý ảo của Trung tâm Cung ứng dịch vụ công phường Bình Tân. Bạn cần hỏi thông tin gì?' }
   ]);
   const [input, setInput] = useState('');
-
+  const [isLoading, setIsLoading] = useState(false);
   const toggleChat = () => setIsOpen(!isOpen);
 
   const handleSend = async () => {
