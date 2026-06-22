@@ -41,50 +41,66 @@ const Chatbot = () => {
     }
   };
 
-  return (
+ return (
     <div className="chatbot-container">
+      {/* Nút bấm tròn màu đỏ bên ngoài */}
+      {!isOpen && (
+        <button className="chat-toggle-btn" onClick={() => setIsOpen(true)}>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+        </button>
+      )}
+
       {/* Khung chat */}
       {isOpen && (
         <div className="chat-window">
+          {/* Thanh tiêu đề */}
           <div className="chat-header">
-            <h4>Trợ lý hành chính công</h4>
-            <button onClick={toggleChat}>X</button>
-          </div>
-          
-            <div className="chat-body">
-          {messages.map((msg, index) => (
-             // ... Code hiện tại hiển thị tin nhắn của bạn ...
-             <div key={index} className={`message ${msg.sender}`}>{msg.text}</div>
-          ))}
-
-          {/* CHÈN THÊM ĐOẠN NÀY VÀO DƯỚI VÒNG LẶP TIN NHẮN */}
-          {isLoading && (
-            <div className="message bot loading-indicator">
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
+            <div className="header-info">
+              <span className="bot-name">Trợ lý CUNG ỨNG BÌNH TÂN</span>
+              <span className="bot-status">Đang hoạt động</span>
             </div>
-          )}
-        </div>
+            <button className="close-btn" onClick={() => setIsOpen(false)}>✖</button>
+          </div>
+
+          {/* Nội dung chat */}
+          <div className="chat-body">
+            {messages.map((msg, index) => (
+              <div key={index} className={`message ${msg.sender}`}>
+                {msg.text}
+              </div>
+            ))}
+            
+            {/* Hiệu ứng 3 dấu chấm (nếu bạn có dùng) */}
+            {isLoading && (
+              <div className="message bot loading-indicator">
+                <span className="dot"></span>
+                <span className="dot"></span>
+                <span className="dot"></span>
+              </div>
+            )}
+          </div>
+
+          {/* Khu vực nhập chữ */}
           <div className="chat-footer">
-            <input 
-              type="text" 
-              value={input} 
+            <input
+              type="text"
+              value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Nhập câu hỏi..."
               onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+              placeholder="Nhập câu hỏi của bạn..."
             />
-            <button onClick={handleSend}>Gửi</button>
+            <button className="send-btn" onClick={handleSend}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
           </div>
         </div>
       )}
-
-      {/* Nút bong bóng chat */}
-      <div className="chat-bubble" onClick={toggleChat}>
-        💬
-      </div>
     </div>
   );
 };
-
 export default Chatbot;

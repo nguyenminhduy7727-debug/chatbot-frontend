@@ -162,7 +162,7 @@ export default function Home() {
           <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
             Thư viện Dịch vụ công điện tử &amp; <br />
             <span className="bg-gradient-to-r from-cyan-200 to-blue-200 bg-clip-text text-transparent">
-              Khám phá Trung tâm Cung
+              Khám phá Trung tâm Cung Ứng
             </span>
           </h1>
 

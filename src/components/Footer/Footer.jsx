@@ -13,7 +13,7 @@ export default function Footer() {
                 src="https://upload.wikimedia.org/wikipedia/vi/0/09/Huy_Hi%E1%BB%87u_%C4%90o%C3%A0n.png"
                 loading="lazy"
               />
-              <h3 className="text-lg font-bold">Chi đoàn UBND phường Bình Tân</h3>
+              <h3 className="text-lg font-bold">Trung tâm Cung Ứng dịch vụ công phường Bình Tân</h3>
             </div>
 
             <p className="text-slate-400 text-sm leading-relaxed">
@@ -31,16 +31,16 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-slate-300">
               <li className="flex items-start">
                 <span className="font-semibold mr-2 min-w-[80px]">Địa chỉ:</span>
-                <span>Chi đoàn UBND Phường Bình Tân, TP. Hồ Chí Minh</span>
+                <span>436 Đường Bình Hành, phường Bình Tân, TP. Hồ Chí Minh</span>
               </li>
 
               <li className="flex items-start">
                 <span className="font-semibold mr-2 min-w-[80px]">Email:</span>
                 <a
-                  href="mailto:doanphuongbinhtan@gmail.com"
+                  href="mailto:cungungbinhtan@gmail.com"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  doanphuongbinhtan@gmail.com
+                  cungung@gmail.com
                 </a>
               </li>
 
@@ -84,7 +84,7 @@ export default function Footer() {
                     // Ví dụ: window.open("https://...", "_blank");
                   }}
                 >
-                  Thành Đoàn TP.HCM
+                  fanpage Cung ứng dịch vụ công Bình Tân:
                 </button>
               </li>
             </ul>
@@ -92,7 +92,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-slate-800 mt-8 pt-6 text-center text-xs text-slate-500">
-          <p>© {year} Chi đoàn UBND phường Bình Tân. All rights reserved.</p>
+          <p>© {year} Trung tâm Cung Ứng dịch vụ công phường Bình Tân. All rights reserved.</p>
           <p className="mt-1">Thư viện Dịch vụ công điện tử</p>
         </div>
       </div>
