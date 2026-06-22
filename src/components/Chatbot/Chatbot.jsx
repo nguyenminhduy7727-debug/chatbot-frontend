@@ -24,7 +24,7 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://chatbot-backend-xxx.vercel.app/api/chat', { // Giữ nguyên link của bạn nha
+      const response = await fetch('https://chatbot-backend-bice.vercel.app/api/chat', { // Giữ nguyên link của bạn nha
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userMessage: userText })
