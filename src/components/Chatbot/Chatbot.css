@@ -161,7 +161,7 @@
 }
 
 .send-btn {
-  background-color: #bd0000;
+  background-color: #1b499e;
   border: none;
   border-radius: 50%;
   width: 48px;
@@ -174,7 +174,7 @@
 }
 
 .send-btn:hover {
-  background-color: #a00000;
+  background-color: #1b499e;
   transform: scale(1.05);
 }
 
@@ -190,3 +190,26 @@
 .dot:nth-child(1) { animation-delay: -0.32s; }
 .dot:nth-child(2) { animation-delay: -0.16s; }
 @keyframes bounce { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+/* --- LÀM ĐẸP CHỮ MARKDOWN --- */
+.message p {
+  margin: 0 0 8px 0; /* Khoảng cách giữa các đoạn văn */
+}
+
+.message p:last-child {
+  margin: 0; /* Bỏ khoảng cách ở đoạn cuối cùng cho gọn */
+}
+
+.message ul, .message ol {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 20px; /* Thụt lề cho gạch đầu dòng */
+}
+
+.message strong {
+  font-weight: 700;
+}
+
+/* Đảm bảo chữ in đậm của khách (bên nền xanh) hiển thị màu trắng */
+.message.user strong {
+  color: #ffffff; 
+}

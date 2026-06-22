@@ -68,7 +68,7 @@ const Chatbot = () => {
           <div className="chat-body">
             {messages.map((msg, index) => (
               <div key={index} className={`message ${msg.sender}`}>
-                {msg.text}
+                <ReactMarkdown>{msg.text}</ReactMarkdown>
               </div>
             ))}
             
