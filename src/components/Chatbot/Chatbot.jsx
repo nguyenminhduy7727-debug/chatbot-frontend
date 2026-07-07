@@ -10,7 +10,7 @@ const Chatbot = () => {
     { sender: 'bot', text: 'Xin chào! Tôi là Trợ lý ảo của Trung tâm Cung ứng dịch vụ công phường Bình Tân. Bạn cần hỏi thông tin gì?' }
   ]);
   const [input, setInput] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLonading] = useState(false);
   const toggleChat = () => setIsOpen(!isOpen);
 
   const handleSend = async () => {
@@ -31,13 +31,25 @@ const Chatbot = () => {
       });
 
       const data = await response.json();
-      setMessages((prev) => [...prev, { sender: 'bot', text: data.reply }]);
+    if (data.reply) {
+        // Nếu AI trả lời đàng hoàng thì in ra
+        setMessages((prev) => [...prev, { sender: 'bot', text: data.reply }]);
+      } else {
+        // Nếu Backend báo lỗi hoặc trả về rỗng (bị quá tải)
+        console.error("Lỗi từ máy chủ:", data);
+        setMessages((prev) => [...prev, { 
+          sender: 'bot', 
+          text: "Hệ thống đang quá tải hoặc máy chủ đang khởi động lại. Bạn vui lòng thử lại sau vài giây nhé! ⚙️" 
+        }]);
+      }
 
     } catch (error) {
-      setMessages((prev) => [...prev, { sender: 'bot', text: "Lỗi kết nối đến máy chủ." }]);
+      setMessages((prev) => [...prev, { 
+        sender: 'bot', 
+        text: "Lỗi kết nối mạng hoặc máy chủ không phản hồi. Vui lòng kiểm tra lại!" 
+      }]);
     } finally {
-      // 2. TẮT TRẠNG THÁI LOAD ĐI (Dù gọi API thành công hay lỗi cũng phải tắt)
-      setIsLoading(false);
+      setIsLoading(false); // Dù lỗi hay không cũng phải tắt 3 dấu chấm đi
     }
   };
 
