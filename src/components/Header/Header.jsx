@@ -123,11 +123,12 @@ export default function Header() {
                     />
                   </div>
 
-                  <div className="leading-tight min-w-0">
-                    <h1 className="text-sm lg:text-[15px] font-black uppercase tracking-wide text-white truncate">
+                <div className="leading-tight min-w-0 flex-1">
+                    {/* Cho phép rớt xuống tối đa 2 dòng (line-clamp-2) thay vì cắt ngang */}
+                    <h1 className="text-[11px] sm:text-sm lg:text-[15px] font-black uppercase tracking-wide text-white line-clamp-2">
                       Trung tâm Cung ứng Dịch vụ công Bình Tân
                     </h1>
-                    <p className="text-xs text-white/80 truncate">
+                    <p className="text-[10px] sm:text-xs text-white/80 truncate mt-0.5">
                       Phường Bình Tân, Thành phố Hồ Chí Minh
                     </p>
                   </div>

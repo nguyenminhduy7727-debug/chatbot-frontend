@@ -150,15 +150,15 @@ export default function Home() {
             {slides[index].desc}
           </p>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <NavLink to="/dich-vu-cong">
-              <button className="px-6 py-3 bg-white text-[#1CA128] font-bold rounded-xl hover:bg-green-50 transition shadow-[0_14px_30px_-18px_rgba(0,0,0,0.45)] active:translate-y-[1px] flex items-center">
+          <div className="flex flex-col sm:flex-row w-full gap-4 pt-4">
+            <NavLink to="/dich-vu-cong" className="w-full sm:w-auto">
+              <button className="w-full px-6 py-3 bg-white text-[#1CA128] font-bold rounded-xl hover:bg-green-50 transition shadow-[0_14px_30px_-18px_rgba(0,0,0,0.45)] active:translate-y-[1px] flex items-center justify-center">
                 Tra cứu thủ tục ngay <span className="ml-2">→</span>
               </button>
             </NavLink>
 
-            <NavLink to="/kham-pha">
-              <button className="px-6 py-3 rounded-xl font-semibold border border-white/25 bg-white/10 backdrop-blur hover:bg-white/15 transition active:translate-y-[1px]">
+            <NavLink to="/kham-pha" className="w-full sm:w-auto">
+              <button className="w-full px-6 py-3 rounded-xl font-semibold border border-white/25 bg-white/10 backdrop-blur hover:bg-white/15 transition active:translate-y-[1px] flex items-center justify-center text-center">
                 Khám phá phường Bình Tân
               </button>
             </NavLink>
