@@ -60,7 +60,7 @@ export default function Activities() {
             </div>
 
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-              Hoạt động Chi đoàn
+              Hoạt động của Trung tâm Cung ứng dịch vụ công Bình Tân
             </h2>
 
             <p className="mx-auto mt-2 max-w-3xl text-slate-600">

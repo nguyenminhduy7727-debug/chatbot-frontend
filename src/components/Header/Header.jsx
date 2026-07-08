@@ -19,7 +19,7 @@ function NavItem({ to, icon, label, onClick }) {
           "group relative inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-extrabold transition",
           "focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70",
           isActive
-            ? "bg-white text-blue-800 shadow-sm"
+            ? "bg-white text-[#1CA128] shadow-sm" // Đổi chữ màu xanh dương sang xanh lá
             : "text-white/90 hover:bg-white/15 hover:text-white",
         ].join(" ")
       }
@@ -40,19 +40,20 @@ function NavItem({ to, icon, label, onClick }) {
 function BotLink({ onClick, className = "" }) {
   return (
     <a
-      href="https://botchat-nine.vercel.app/"
+      href="https://ecovision-frontend-ecru.vercel.app/"
       target="_blank"
       rel="noreferrer"
       onClick={onClick}
       className={[
         "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-extrabold transition",
-        "bg-gradient-to-r from-sky-400/25 to-fuchsia-400/20 text-white hover:from-sky-400/35 hover:to-fuchsia-400/30",
-        "ring-1 ring-inset ring-white/20 shadow-sm",
+        // Đổi nút Trợ lý ảo sang màu Vàng rực rỡ, chữ xanh đậm để nổi bật
+        "bg-gradient-to-r from-[#F8CB10] to-yellow-400 text-[#0F5A16] hover:from-yellow-400 hover:to-yellow-300",
+        "ring-1 ring-inset ring-white/30 shadow-md",
         className,
       ].join(" ")}
     >
       <span className="text-base leading-none">🤖</span>
-      <span className="whitespace-nowrap">Trợ Lý Hỗ Trợ</span>
+      <span className="whitespace-nowrap">Trợ Lý Hỗ trợ phân loại rác</span>
       <svg
         viewBox="0 0 24 24"
         className="h-4 w-4 opacity-90"
@@ -103,8 +104,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50">
       <div className="relative">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-800 via-blue-700 to-sky-600" />
-        <div className="pointer-events-none absolute inset-0 -z-10 opacity-80 [background:radial-gradient(circle_at_20%_10%,rgba(255,255,255,.18),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(236,72,153,.12),transparent_45%)]" />
+        {/* Nền Header đổi sang tone Xanh lá */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#0F5A16] via-[#1CA128] to-[#2E8B36]" />
+        <div className="pointer-events-none absolute inset-0 -z-10 opacity-80 [background:radial-gradient(circle_at_20%_10%,rgba(255,255,255,.18),transparent_40%),radial-gradient(circle_at_80%_0%,rgba(248,203,16,.15),transparent_45%)]" />
 
         <div className="border-b border-white/10 backdrop-blur">
           <div className="container mx-auto px-4 py-3">
@@ -117,7 +119,7 @@ export default function Header() {
                     <img
                       alt="Logo Đoàn"
                       className="relative w-11 h-11 lg:w-12 lg:h-12 rounded-2xl bg-white/10 p-1 object-contain"
-                      src="https://upload.wikimedia.org/wikipedia/vi/0/09/Huy_Hi%E1%BB%87u_%C4%90o%C3%A0n.png"
+                      src="/images/logo.jpg"
                     />
                   </div>
 
@@ -165,7 +167,8 @@ export default function Header() {
           <div className="absolute left-0 right-0 top-0">
             <div
               ref={panelRef}
-              className="mx-3 mt-3 overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-r from-blue-800/95 via-blue-700/95 to-sky-700/90 shadow-2xl"
+              // Nền menu Mobile đổi sang tone Xanh lá
+              className="mx-3 mt-3 overflow-hidden rounded-3xl border border-white/15 bg-gradient-to-r from-[#0F5A16]/95 via-[#1CA128]/95 to-[#2E8B36]/90 shadow-2xl"
             >
               <div className="p-3">
                 <div className="flex items-center justify-between gap-2 rounded-2xl bg-white/10 p-3">
@@ -192,7 +195,7 @@ export default function Header() {
                       className={({ isActive }) =>
                         [
                           "flex items-center justify-between rounded-2xl px-4 py-3 text-sm font-extrabold transition",
-                          isActive ? "bg-white text-blue-800 shadow" : "bg-white/10 text-white hover:bg-white/15",
+                          isActive ? "bg-white text-[#1CA128] shadow" : "bg-white/10 text-white hover:bg-white/15",
                         ].join(" ")
                       }
                     >

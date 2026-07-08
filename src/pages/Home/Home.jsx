@@ -2,9 +2,30 @@ import { NavLink } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 
 export default function Home() {
+  // 🛠️ BƯỚC 1: NẠP CẢ CHỮ VÀO TRONG SLIDE
   const slides = useMemo(
     () => [
-      { src: "/images/logo.jpg", alt: "Digital Public Service" },
+      { 
+        src: "/images/tapthe1.jpg", 
+        alt: "Digital Public Service",
+        title: "Thư viện Dịch vụ công điện tử &",
+        highlight: "Khám phá Trung tâm Cung Ứng",
+        desc: "Hỗ trợ đoàn viên, thanh niên và người dân thực hiện thủ tục hành chính nhanh chóng. Kết nối và lan tỏa giá trị văn hóa - lịch sử địa phương."
+      },
+      { 
+        src: "/images/doanthanhnien.jpg", 
+        alt: "Hoạt động Đoàn",
+        title: "Nhiệt huyết Tuổi trẻ Xung kích &",
+        highlight: "Hoạt động Đoàn năng nổ",
+        desc: "Cập nhật liên tục tin tức sự kiện, chiến dịch tình nguyện hè và các công trình thanh niên chuyển đổi số cộng đồng ý nghĩa."
+      },
+      { 
+        src: "/images/hinh 1.jpg", 
+        alt: "Khám phá Bình Tân",
+        title: "PHƯỜNG BÌNH TÂN PHÁT ĐỘNG CHƯƠNG TRÌNH ĐI BỘ TRỰC TUYẾN GÂY QUỸ",
+        highlight: "'VÌ NGƯỜI NGHÈO NĂM 2026'",
+        desc: "Tìm hiểu sâu sắc về các di tích lịch sử, truyền thống văn hóa vẻ vang cùng cẩm nang ẩm thực đặc trưng thông qua bản đồ số hóa."
+      },
     ],
     []
   );
@@ -91,39 +112,46 @@ export default function Home() {
   };
 
   return (
-    <div className="space-y-10">
-      {/* HERO */}
+    <div className="space-y-6">
+      {/* 📣 BẢNG TIN CHẠY CHỮ NỔI BẬT */}
+      <div className="mx-4 mt-4 overflow-hidden rounded-xl bg-yellow-50 border border-yellow-200 shadow-sm flex items-center h-10">
+        <div className="bg-[#bd0000] text-white text-xs font-black uppercase tracking-wider px-4 h-full flex items-center shrink-0 rounded-l-xl animate-pulse">
+          Tin Mới 🔥
+        </div>
+        <marquee className="text-sm font-bold text-[#0F5A16] py-1 pl-3" behavior="scroll" direction="left" scrollamount="6" onMouseOver={(e) => e.currentTarget.stop()} onMouseOut={(e) => e.currentTarget.start()}>
+          ✨ Chào mừng người dân đến với Cổng thông tin điện tử Trung tâm Cung ứng dịch vụ công Bình Tân! 🌟 Hệ thống Trợ lý ảo AI hỗ trợ giải đáp thủ tục hành chính 24/7 đã chính thức đi vào hoạt động. 🚀 Hãy bấm vào nút "Trợ Lý Hỗ Trợ" màu vàng trên thanh Menu để trải nghiệm ngay!
+        </marquee>
+      </div>
+
+      {/* HERO SECTION */}
       <section className="relative mx-4 mt-6 overflow-hidden rounded-3xl text-white shadow-[0_22px_70px_-25px_rgba(2,6,23,0.65)] flex flex-col md:flex-row min-h-[500px]">
-        {/* Đổi dải gradient nền sang tone xanh lá */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F5A16] via-[#1CA128] to-[#2E8B36]" />
         <div className="absolute -left-24 -top-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
         <div className="absolute -right-24 -bottom-24 h-80 w-80 rounded-full bg-[#F8CB10]/20 blur-3xl" />
-
         <div className="absolute inset-0 opacity-[0.12] [background-image:radial-gradient(circle_at_1px_1px,rgba(255,255,255,.7)_1px,transparent_0)] [background-size:22px_22px] pointer-events-none" />
 
-        {/* LEFT */}
+        {/* LEFT PANEL - CHỮ THAY ĐỔI ĐỘNG THEO SLIDE */}
         <div className="relative z-10 w-full md:w-3/5 p-8 md:p-16 flex flex-col justify-center space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wide uppercase backdrop-blur border border-white/20 bg-white/10 w-fit">
             <span className="h-2 w-2 rounded-full bg-[#F8CB10] shadow-[0_0_0_6px_rgba(248,203,16,0.2)]" />
             Hưởng ứng ngày Chuyển đổi số Quốc gia
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)]">
-            Thư viện Dịch vụ công điện tử &amp; <br />
-            {/* Chữ chuyển sắc màu Vàng sang Trắng */}
+          {/* 🌟 Gọi tiêu đề động và khóa chiều cao tối thiểu (min-h) để không bị giật giao diện khi đổi chữ */}
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight drop-shadow-[0_12px_30px_rgba(0,0,0,0.35)] min-h-[120px] transition-all duration-500">
+            {slides[index].title} <br />
             <span className="bg-gradient-to-r from-[#F8CB10] to-yellow-100 bg-clip-text text-transparent">
-              Khám phá Trung tâm Cung Ứng
+              {slides[index].highlight}
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed">
-            Hỗ trợ đoàn viên, thanh niên và người dân thực hiện thủ tục hành chính nhanh chóng.
-            Kết nối và lan tỏa giá trị văn hóa - lịch sử địa phương.
+          {/* 🌟 Gọi mô tả động */}
+          <p className="text-lg md:text-xl text-white/90 max-w-2xl leading-relaxed min-h-[84px] transition-all duration-500">
+            {slides[index].desc}
           </p>
 
           <div className="flex flex-wrap gap-4 pt-4">
             <NavLink to="/dich-vu-cong">
-              {/* Nút bấm chữ xanh lá nền trắng */}
               <button className="px-6 py-3 bg-white text-[#1CA128] font-bold rounded-xl hover:bg-green-50 transition shadow-[0_14px_30px_-18px_rgba(0,0,0,0.45)] active:translate-y-[1px] flex items-center">
                 Tra cứu thủ tục ngay <span className="ml-2">→</span>
               </button>
@@ -137,7 +165,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* RIGHT */}
+        {/* RIGHT PANEL - SLIDE ẢNH CHẠY TỰ ĐỘNG */}
         <div className="relative w-full md:w-2/5 h-64 md:h-auto p-3 md:p-4">
           <div className="relative h-full overflow-hidden rounded-2xl md:rounded-3xl border border-white/15 bg-white/5 shadow-[0_30px_80px_-35px_rgba(0,0,0,0.6)]">
             <div
@@ -152,7 +180,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            {/* Vệt chia chuyển sang màu xanh lá đậm */}
             <div className="hidden md:block absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0F5A16]/55 to-transparent" />
           </div>
         </div>
@@ -163,9 +190,7 @@ export default function Home() {
         <section className="container mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-800">Tiện ích nổi bật</h2>
-            <p className="text-gray-500 mt-2">
-              Truy cập nhanh các chuyên mục chính của cổng thông tin
-            </p>
+            <p className="text-gray-500 mt-2">Truy cập nhanh các chuyên mục chính của cổng thông tin</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -184,9 +209,7 @@ export default function Home() {
                         <span className={t.icon}>{f.icon}</span>
                         <span className={["absolute inset-0 rounded-2xl ring-2 ring-transparent transition-all duration-300 group-hover:ring-2", t.ring].join(" ")} />
                       </div>
-                      <span className="text-gray-400 transition-all duration-300 group-hover:text-gray-600 group-hover:translate-x-0.5">
-                        →
-                      </span>
+                      <span className="text-gray-400 transition-all duration-300 group-hover:text-gray-600 group-hover:translate-x-0.5">→</span>
                     </div>
 
                     <h3 className="text-lg font-bold text-gray-800 mb-2">{f.title}</h3>
@@ -203,59 +226,40 @@ export default function Home() {
       <section className="bg-white py-12 border-y border-gray-100">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-
-            {/* BOX 1 */}
             <div className="group relative rounded-2xl p-6 text-center bg-green-50/40 hover:bg-green-50/70 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[#1CA128]">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <path d="M14 2v6h6" />
-                  <path d="M8 13h8" />
-                  <path d="M8 17h8" />
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><path d="M14 2v6h6" /><path d="M8 13h8" /><path d="M8 17h8" />
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold tracking-tight text-[#1CA128] mb-1">
-                100<span className="text-2xl align-top">%</span>
-              </div>
+              <div className="text-4xl font-extrabold tracking-tight text-[#1CA128] mb-1">100<span className="text-2xl align-top">%</span></div>
               <div className="text-gray-800 font-semibold">Hồ sơ trực tuyến</div>
               <p className="text-sm text-gray-600 mt-1">Hỗ trợ người dân tận tình</p>
               <div className="hidden md:block absolute right-0 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
             </div>
 
-            {/* BOX 2 */}
             <div className="group relative rounded-2xl p-6 text-center bg-yellow-50/40 hover:bg-yellow-50/70 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[#F8CB10]">
-                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
+                  <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z" /><circle cx="12" cy="10" r="3" />
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold tracking-tight text-[#F8CB10] mb-1">
-                15<span className="text-2xl align-top">+</span>
-              </div>
+              <div className="text-4xl font-extrabold tracking-tight text-[#F8CB10] mb-1">15<span className="text-2xl align-top">+</span></div>
               <div className="text-gray-800 font-semibold">Di tích &amp; Địa điểm</div>
               <p className="text-sm text-gray-600 mt-1">Đã được số hóa thông tin</p>
               <div className="hidden md:block absolute right-0 top-6 bottom-6 w-px bg-gradient-to-b from-transparent via-gray-200 to-transparent" />
             </div>
 
-            {/* BOX 3 */}
             <div className="group relative rounded-2xl p-6 text-center bg-green-50/40 hover:bg-green-50/70 ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
               <div className="mx-auto mb-3 grid h-12 w-12 place-items-center rounded-2xl bg-white shadow-sm ring-1 ring-black/5 transition-transform duration-300 group-hover:scale-110 group-hover:-rotate-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-6 w-6 text-[#1CA128]">
-                  <path d="M4 12a8 8 0 0 1 16 0" />
-                  <path d="M6 12v4a2 2 0 0 0 2 2h1" />
-                  <path d="M18 12v4a2 2 0 0 1-2 2h-1" />
-                  <path d="M9 18h6" />
-                  <path d="M12 4v2" />
+                  <path d="M4 12a8 8 0 0 1 16 0" /><path d="M6 12v4a2 2 0 0 0 2 2h1" /><path d="M18 12v4a2 2 0 0 1-2 2h-1" /><path d="M9 18h6" /><path d="M12 4v2" />
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold tracking-tight text-[#1CA128] mb-1">
-                24<span className="text-2xl align-top">/7</span>
-              </div>
-              <div className="text-gray-800 font-semibold">Trợ lý ảo hỗ trợ</div>
+              <div className="text-4xl font-extrabold tracking-tight text-[#1CA128] mb-1">24<span className="text-2xl align-top">/7</span></div>
+              <div className="text-gray-800 font-semibold">Trợ lý ảo phân loại rác</div>
               <p className="text-sm text-gray-600 mt-1">Giải đáp thắc mắc tự động</p>
             </div>
-
           </div>
         </div>
       </section>

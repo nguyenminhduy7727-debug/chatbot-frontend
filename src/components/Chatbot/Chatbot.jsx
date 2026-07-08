@@ -10,7 +10,8 @@ const Chatbot = () => {
     { sender: 'bot', text: 'Xin chào! Tôi là Trợ lý ảo của Trung tâm Cung ứng dịch vụ công phường Bình Tân. Bạn cần hỏi thông tin gì?' }
   ]);
   const [input, setInput] = useState('');
-  const [isLoading, setIsLonading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(true);
   const toggleChat = () => setIsOpen(!isOpen);
 
   const handleSend = async () => {
@@ -57,11 +58,33 @@ const Chatbot = () => {
     <div className="chatbot-container">
       {/* Nút bấm tròn màu đỏ bên ngoài */}
       {!isOpen && (
-        <button className="chat-toggle-btn" onClick={() => setIsOpen(true)}>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-          </svg>
-        </button>
+       <div className="chat-toggle-wrapper">
+          {/* Bong bóng hiện chữ gây chú ý */}
+          {showTooltip && (
+            <div className="chat-bubble-attention" onClick={() => setIsOpen(true)}>
+              <p>Xin chào! Mình có thể giúp gì về thủ tục hành chính công không? 🤖</p>
+              {/* Nút X nhỏ để tắt bong bóng nếu người dân thấy vướng */}
+              <button 
+                className="bubble-close-x" 
+                onClick={(e) => {
+                  e.stopPropagation(); // Ngăn không cho sự kiện click này làm mở khung chat
+                  setShowTooltip(false);
+                }}
+              >
+                ✕
+              </button>
+              {/* Mũi tên chĩa xuống nút chat */}
+              <div className="bubble-arrow"></div>
+            </div>
+          )}
+
+          {/* Nút chat chính */}
+          <button className="chat-toggle-btn" onClick={() => setIsOpen(true)}>
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            </svg>
+          </button>
+        </div>
       )}
 
       {/* Khung chat */}

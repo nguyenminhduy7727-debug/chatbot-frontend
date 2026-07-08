@@ -10,7 +10,7 @@ export default function Footer() {
               <img
                 alt="Logo"
                 className="w-10 h-10 object-contain"
-                src="https://upload.wikimedia.org/wikipedia/vi/0/09/Huy_Hi%E1%BB%87u_%C4%90o%C3%A0n.png"
+                src="/images/logo.jpg"
                 loading="lazy"
               />
               <h3 className="text-lg font-bold">Trung tâm Cung Ứng dịch vụ công phường Bình Tân</h3>
@@ -47,10 +47,10 @@ export default function Footer() {
               <li className="flex items-start">
                 <span className="font-semibold mr-2 min-w-[80px]">Điện thoại:</span>
                 <a
-                  href="tel:+84283839XXXX"
+                  href="tel:+8409785xxxx"
                   className="hover:text-blue-400 transition-colors"
                 >
-                  (028) 3839 xxxx
+                  (+84) 0972 85 xxxx
                 </a>
               </li>
             </ul>
@@ -77,7 +77,7 @@ export default function Footer() {
                 <button
                   type="button"
                   className="hover:text-blue-400 transition-colors text-left"
-                  aria-label="Liên kết Thành Đoàn TP.HCM (đang cập nhật)"
+                  aria-label="Liên kết Trung tâm Cung ứng dịch vụ công Bình Tân đang cập nhật"
                   title="Liên kết đang cập nhật"
                   onClick={() => {
                     // TODO: Khi có link thật thì thay bằng <a href="..."> hoặc react-router <Link to="...">

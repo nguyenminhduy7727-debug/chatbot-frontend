@@ -213,3 +213,77 @@
 .message.user strong {
   color: #ffffff; 
 }
+.chat-toggle-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* Định dạng bong bóng lời thoại */
+.chat-bubble-attention {
+  position: absolute;
+  bottom: 80px; /* Nằm cách nút chat một khoảng vừa phải */
+  right: 0;
+  background-color: #ffffff;
+  color: #2d3748;
+  padding: 12px 32px 12px 16px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e2e8f0;
+  width: 240px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+  /* Tạo hiệu ứng bay nhấp nhô tự động liên tục */
+  animation: floatUpDown 3s ease-in-out infinite; 
+  z-index: 10000;
+  transition: all 0.2s;
+}
+
+.chat-bubble-attention:hover {
+  box-shadow: 0 12px 30px rgba(27, 73, 158, 0.25);
+  border-color: #1CA128; /* Đổi viền sang xanh lá khi rê chuột vào */
+}
+
+/* Nút X để đóng bong bóng */
+.bubble-close-x {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px;
+  line-height: 1;
+}
+
+.bubble-close-x:hover {
+  color: #4a5568;
+}
+
+/* Cái đuôi tam giác chĩa xuống dưới */
+.bubble-arrow {
+  position: absolute;
+  bottom: -7px;
+  right: 24px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ffffff; /* Màu trùng với nền bong bóng */
+}
+
+/* Kịch bản hiệu ứng nhấp nhô lên xuống */
+@keyframes floatUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px); /* Bay nhẹ lên 8px rồi hạ xuống */
+  }
+}

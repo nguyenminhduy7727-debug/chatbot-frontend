@@ -37,7 +37,7 @@ export default function About() {
               <div className="lg:col-span-7">
                 <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-sm">
                   <span className="h-2 w-2 rounded-full bg-emerald-500" />
-                  Thông tin Chi đoàn
+                  Thông tin Cung ứng dịch vụ công Bình Tân
                 </div>
 
                 <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-slate-800 sm:text-5xl">
@@ -74,11 +74,11 @@ export default function About() {
                     <div
                       key={idx}
                       className="
-        rounded-2xl bg-white px-4 py-4
-        shadow-[0_10px_30px_-18px_rgba(15,23,42,0.35)]
-        ring-1 ring-slate-200/70
-        transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-22px_rgba(15,23,42,0.45)]
-      "
+                                  rounded-2xl bg-white px-4 py-4
+                                  shadow-[0_10px_30px_-18px_rgba(15,23,42,0.35)]
+                                  ring-1 ring-slate-200/70
+                                  transition hover:-translate-y-0.5 hover:shadow-[0_16px_40px_-22px_rgba(15,23,42,0.45)]
+                                "
                     >
                       <div className="text-xl sm:text-2xl font-extrabold tracking-tight leading-tight text-slate-800">
                         {h.value}
